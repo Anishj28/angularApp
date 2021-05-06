@@ -1,0 +1,49 @@
+<div class="mx-auto mt-3 w-25" id="main">
+     <h1 class="text-center">User Registration Form</h1>
+      <!-- Form -->
+     <form  (ngSubmit)="addUser(ref)" #ref="ngForm">
+       <div >
+         <label for="username">Username</label>
+         <input class="form-control" type="text" name="username" id="username" ngModel>
+       </div>
+       <div>
+         <label for="password">DOB</label>
+         <input  class="form-control" type="date" name="dob" id="password" ngModel>
+       </div>
+      <div>
+         <label for="email">Mail</label>
+         <input class="form-control" type="email" name="email" id="email" ngModel>
+      </div>
+      <button type="submit" class="btn btn-danger mx-auto m-3 d-block">Register</button>
+     </form>
+     <div class="text-center">
+       <h3 class="text-success">List of Users</h3>
+       <h3 *ngIf="users.length==0">Users not found</h3>
+       <div *ngIf="users.length!=0">
+            <!--Accordian -->
+            <div class="accordion">
+              <div *ngFor="let obj of users ; let ind=index; " >
+                <div id="grp">
+                 <div class="accordion-item" id="item1" >
+                     <div class="accordion-header" >
+                         <button class="accordion-button" data-toggle="collapse" data-target="#ref" >User {{ind+1}}</button>
+                     </div>
+                     <div class="accordion-collapse collapse show "   id="ref">
+                       <div class="accordion-body" >
+                         <p >Name: {{obj.username}}</p>
+                         <p >DOB: {{obj.dob}}</p>
+                         <p >Email: {{obj.email}} 
+                        <button class="btn btn-sm deleteButton btn-danger" (click)="deleteUser(ind)">
+                          Delete
+                        </button>
+                        </p>
+                       </div>   
+                     </div>
+                 </div> 
+             </div>
+             </div>
+           </div>
+       </div>
+     </div>
+     </div>
+   

@@ -1,0 +1,10 @@
+.accordion{
+    display: block; 
+    margin: auto;
+}
+.accordion-body{
+    text-align: left;
+}
+.deleteButton{
+    float:right;
+}
