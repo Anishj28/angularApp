@@ -8,5 +8,5 @@ import {NgForm} from '@angular/forms'
 })
 
 export class AppComponent {
-  card=[1,2,3,4,5,6];
+  
 }
