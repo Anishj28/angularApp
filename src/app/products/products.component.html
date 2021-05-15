@@ -1,7 +1,15 @@
-<h6 *ngFor="let i of  productsReceived" class="text-dark">{{i}}</h6>
-<br>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-5">
-  <div class="col" *ngFor="let i of arr">
-    <app-product-info [sampleObj]=i (customEvent)="receivedData($event)"></app-product-info>
-  </div>
+<ul class="nav nav-pills justify-content-evenly mt-5" style="margin-bottom: 80px;">
+  <li class="nav-item bg-dark">
+    <a class="nav-link text-white" routerLink="mobiles" routerLinkActive="active">Mobiles</a>
+  </li>
+  <li class="nav-item bg-dark">
+    <a class="nav-link text-white" routerLink="bikes" routerLinkActive="active">Bikes</a>
+  </li>
+  <li class="nav-item bg-dark">
+    <a class="nav-link text-white" routerLink="televisions" routerLinkActive="active">Televisions</a>
+  </li>
+</ul>
+
+<div class="container">
+   <router-outlet></router-outlet>
 </div>
